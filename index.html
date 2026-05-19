@@ -1,0 +1,419 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JohawebK - El Meta Framework Seguro</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'space-dark': '#0b0f19',
+                        'cyber-blue': '#00f0ff',
+                        'cyber-orange': '#ff6b00',
+                        'panel-dark': '#0e1424',
+                        'card-dark': '#141b2f'
+                    },
+                    fontFamily: {
+                        mono: ['JetBrains Mono', 'Fira Code', 'ui-monospace', 'monospace'],
+                    }
+                }
+            }
+        }
+    </script>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;700;800&display=swap" rel="stylesheet">
+    <style>
+        .glow-cyan:hover { box-shadow: 0 0 20px rgba(0, 240, 255, 0.3); }
+        .glow-orange:hover { box-shadow: 0 0 20px rgba(255, 107, 0, 0.3); }
+        @keyframes pulse-slow { 0%, 100% { opacity: 0.1; } 50% { opacity: 0.2; } }
+        .bg-pulse { animation: pulse-slow 8s infinite ease-in-out; }
+    </style>
+</head>
+<body class="bg-space-dark text-gray-100 font-mono selection:bg-cyber-orange selection:text-white antialiased overflow-x-hidden">
+
+    <!-- Efectos de Luces de Neón de Fondo -->
+    <div class="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-cyber-blue/10 rounded-full blur-[140px] pointer-events-none bg-pulse"></div>
+    <div class="absolute top-[60%] left-1/4 -translate-x-1/2 -translate-y-1/2 w-[400px] h-[400px] bg-cyber-orange/10 rounded-full blur-[120px] pointer-events-none bg-pulse"></div>
+
+    <!-- Barra de Navegación -->
+    <nav class="flex justify-between items-center p-6 border-b border-cyan-900/30 backdrop-blur-md sticky top-0 z-50 bg-space-dark/80">
+        <div class="flex items-center gap-3">
+            <div class="w-9 h-9 bg-gradient-to-tr from-cyber-blue to-cyber-orange rounded-lg flex items-center justify-center relative shadow-lg shadow-cyber-blue/20">
+                <span class="text-xl">🚀</span>
+                <span class="absolute -top-1 -right-1 text-xs">⭐</span>
+            </div>
+            <span class="text-2xl font-extrabold tracking-wider bg-gradient-to-r from-cyber-blue to-cyber-orange bg-clip-text text-transparent">JohawebK</span>
+        </div>
+        <div class="hidden md:flex gap-8 text-sm text-gray-400">
+            <a href="#features" class="hover:text-cyber-blue transition-colors">Características</a>
+            <a href="#tutorial" class="hover:text-white transition-colors">Tutorial</a>
+            <a href="#docs" class="hover:text-cyber-blue transition-colors">Documentación</a>
+            <a href="#blue-team" class="hover:text-cyber-orange transition-colors">Blue Team Dashboard</a>
+        </div>
+        <div>
+            <a href="#blue-team" class="border border-cyber-blue/50 text-cyber-blue px-4 py-2 rounded text-xs uppercase tracking-widest hover:bg-cyber-blue/10 transition font-bold">Consola Live</a>
+        </div>
+    </nav>
+
+    <!-- Sección Hero -->
+    <header class="container mx-auto px-6 py-20 text-center relative z-10">
+        <div class="inline-flex items-center gap-2 px-3 py-1 border border-cyber-blue/30 rounded-full bg-cyber-blue/5 text-xs text-cyber-blue mb-8 animate-pulse">
+            <span>🛡️ SECURITY SHIELD V1.0 INTEGRADO</span>
+        </div>
+        <h1 class="text-4xl md:text-7xl font-extrabold tracking-tight mb-8 leading-tight">
+            La velocidad de <span class="text-cyber-blue">Astro</span>.<br>
+            La ergonomía de <span class="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-blue-400">React</span>.<br>
+            Blindado por defecto.
+        </h1>
+        <p class="max-w-3xl mx-auto text-gray-400 text-base md:text-xl mb-12 leading-relaxed">
+            JohawebK es el meta framework del futuro. Diseña con componentes interactivos potentes y compila con 0KB de JavaScript en el cliente, mientras nuestro motor <span class="text-cyber-orange font-bold">Blue Team</span> vigila tus dependencias y código en tiempo real.
+        </p>
+        <div class="flex flex-col sm:flex-row justify-center gap-4 max-w-md mx-auto">
+            <button onclick="copiarComando('cmd-hero')" class="bg-gradient-to-r from-cyber-blue to-blue-600 text-space-dark px-8 py-4 rounded font-bold shadow-lg shadow-cyber-blue/20 transition-all hover:scale-105 glow-cyan flex items-center justify-between gap-3 w-full group">
+                <span id="cmd-hero">npm create johawebk@latest</span>
+                <span class="text-space-dark/60 group-hover:text-space-dark transition-colors">📋</span>
+            </button>
+        </div>
+    </header>
+
+   
+    <section id="features" class="container mx-auto px-6 py-12 border-t border-gray-900">
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+            <div class="bg-panel-dark border border-gray-800 p-8 rounded-xl relative group overflow-hidden">
+                <div class="text-3xl mb-4">⚛️</div>
+                <h3 class="text-xl font-bold mb-2 text-white">Ecosistema Familiar</h3>
+                <p class="text-gray-400 text-sm leading-relaxed">Escribe componentes con JSX utilizando tus estados y hooks de siempre. JohawebK entiende tu flujo de trabajo de inmediato.</p>
+            </div>
+            <div class="bg-panel-dark border border-gray-800 p-8 rounded-xl relative group overflow-hidden">
+                <div class="text-3xl mb-4">⚡</div>
+                <h3 class="text-xl font-bold mb-2 text-white">Rendimiento Isla Extremo</h3>
+                <p class="text-gray-400 text-sm leading-relaxed">HTML estático generado en servidor ultra veloz. La hidratación del código JS solo ocurre en las islas interactivas que tú decidas.</p>
+            </div>
+            <div class="bg-panel-dark border border-gray-800 p-8 rounded-xl relative group overflow-hidden">
+                <div class="text-3xl mb-4">🛡️</div>
+                <h3 class="text-xl font-bold mb-2 text-white">Núcleo Defensivo</h3>
+                <p class="text-gray-400 text-sm leading-relaxed">Análisis Estático de Seguridad (SAST) inyectado directamente en el compilador. Detén las brechas antes de desplegar.</p>
+            </div>
+        </div>
+    </section>
+
+   
+    <section id="tutorial" class="container mx-auto px-6 py-20 border-t border-gray-900">
+        <div class="max-w-5xl mx-auto">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl font-bold mb-4 text-white">Línea de Tiempo del Tutorial</h2>
+                <p class="text-gray-400">Levanta tu infraestructura frontend con seguridad proactiva paso a paso.</p>
+            </div>
+
+          
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start relative">
+                
+               
+                <div class="space-y-16 relative before:absolute before:inset-y-2 before:left-6 before:w-0.5 before:bg-gradient-to-b before:from-cyber-blue before:via-cyber-orange before:to-green-500">
+                    
+               
+                    <div class="relative pl-14 group cursor-pointer" onclick="setActiveStep(1)">
+                        <div id="dot-1" class="absolute left-3 top-1 -translate-x-1/2 w-6 h-6 rounded-full bg-space-dark border-4 border-cyber-blue shadow-[0_0_10px_rgba(0,240,255,0.5)] transition-all z-10"></div>
+                        <h4 class="text-lg font-bold text-cyber-blue mb-2 transition-colors duration-300" id="title-step-1">01. Simula la Creación</h4>
+                        <p class="text-sm text-gray-400 leading-relaxed">Inicializa el asistente CLI interactivo de JohawebK. Este configurará de forma automatizada la arquitectura base del proyecto y el entorno de aislamiento de componentes.</p>
+                    </div>
+
+                    <!-- Paso 2 -->
+                    <div class="relative pl-14 group cursor-pointer" onclick="setActiveStep(2)">
+                        <div id="dot-2" class="absolute left-3 top-1 -translate-x-1/2 w-6 h-6 rounded-full bg-space-dark border-4 border-gray-700 transition-all z-10"></div>
+                        <h4 class="text-lg font-bold text-gray-500 mb-2 transition-colors duration-300" id="title-step-2">02. Codificación Modular</h4>
+                        <p class="text-sm text-gray-400 leading-relaxed">Escribe componentes dinámicos con la elegancia declarativa de React dentro de archivos <code class="text-cyber-orange">.jhk</code>. El compilador se encargará de remover el JavaScript innecesario.</p>
+                    </div>
+
+                    <!-- Paso 3 -->
+                    <div class="relative pl-14 group cursor-pointer" onclick="setActiveStep(3)">
+                        <div id="dot-3" class="absolute left-3 top-1 -translate-x-1/2 w-6 h-6 rounded-full bg-space-dark border-4 border-gray-700 transition-all z-10"></div>
+                        <h4 class="text-lg font-bold text-gray-500 mb-2 transition-colors duration-300" id="title-step-3">03. Despliegue & Auditoría</h4>
+                        <p class="text-sm text-gray-400 leading-relaxed">Ejecuta el servidor de producción. El núcleo compilará el código estático a máxima potencia mientras el analizador defensivo Blue Team efectúa una inspección de código en vivo.</p>
+                    </div>
+                </div>
+
+                <!-- Columna Derecha: Terminal Interactiva Dinámica -->
+                <div class="sticky top-28 bg-panel-dark border border-gray-800 rounded-xl shadow-2xl overflow-hidden min-h-[340px] flex flex-col">
+                    <!-- Cabecera de la Terminal -->
+                    <div class="bg-[#090d16] px-4 py-3 border-b border-gray-900 flex justify-between items-center">
+                        <div class="flex gap-1.5">
+                            <span class="w-3 h-3 rounded-full bg-red-500/70"></span>
+                            <span class="w-3 h-3 rounded-full bg-yellow-500/70"></span>
+                            <span class="w-3 h-3 rounded-full bg-green-500/70"></span>
+                        </div>
+                        <span id="terminal-title" class="text-xs text-gray-500 font-bold tracking-widest">bash - johawebk-cli</span>
+                    </div>
+                    
+                    <!-- Pantalla / Salida de comandos -->
+                    <div class="p-6 flex-1 font-mono text-xs md:text-sm overflow-y-auto leading-relaxed" id="terminal-body">
+                        <!-- Contenido Paso 1 por Defecto -->
+                        <div class="text-cyan-400 animate-fade-in">
+                            <span class="text-gray-600">~</span> npm create johawebk@latest my-secure-app<br>
+                            <span class="text-gray-500">▶ Configurando espacio de trabajo estructurado...</span><br>
+                            <span class="text-gray-500">▶ Inyectando políticas del módulo de ciberseguridad...</span><br><br>
+                            <span class="text-green-400 font-bold">✓ Entorno listo. Directorio /my-secure-app inicializado correctamente.</span>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+  
+    <section id="docs" class="container mx-auto px-6 py-20 border-t border-gray-900">
+        <div class="max-w-5xl mx-auto">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold mb-4 text-cyber-blue">Documentación Técnica</h2>
+                <p class="text-gray-400">Explora el funcionamiento interno del framework a través del panel lateral interactivo.</p>
+            </div>
+
+            <!-- Contenedor del Menú Lateral y Contenido -->
+            <div class="flex flex-col md:flex-row gap-8 bg-panel-dark border border-gray-800 rounded-2xl p-6 md:p-8 min-h-[450px]">
+                
+                <!-- Menú Lateral Dinámico -->
+                <aside class="w-full md:w-64 flex flex-row md:flex-col gap-2 overflow-x-auto md:overflow-x-visible pb-4 md:pb-0 md:border-r md:border-gray-800 md:pr-6 text-sm font-bold shrink-0">
+                    <button onclick="switchTab('tab-routing')" id="btn-tab-routing" class="tab-btn w-full text-left px-4 py-3 rounded-lg bg-card-dark text-cyber-blue border-l-4 border-cyber-blue whitespace-nowrap transition-all duration-200">
+                        📁 Enrutamiento
+                    </button>
+                    <button onclick="switchTab('tab-islands')" id="btn-tab-islands" class="tab-btn w-full text-left px-4 py-3 rounded-lg text-gray-400 hover:bg-card-dark/50 hover:text-white whitespace-nowrap transition-all duration-200">
+                        🏝️ Islas Dinámicas
+                    </button>
+                    <button onclick="switchTab('tab-security')" id="btn-tab-security" class="tab-btn w-full text-left px-4 py-3 rounded-lg text-gray-400 hover:bg-card-dark/50 hover:text-white whitespace-nowrap transition-all duration-200">
+                        🛡️ Reglas Blue Team
+                    </button>
+                </aside>
+
+                <!-- Visor de Contenido Principal (Cambios sin recargar la página) -->
+                <main class="flex-1 flex flex-col justify-between">
+                    
+                    <!-- Bloque de Texto Variable -->
+                    <div class="prose prose-invert max-w-none">
+                        <!-- Enrutamiento -->
+                        <div id="tab-routing" class="tab-content space-y-4">
+                            <h3 class="text-2xl font-bold text-white tracking-tight">Enrutamiento Basado en Archivos</h3>
+                            <p class="text-gray-400 text-sm leading-relaxed">JohawebK automatiza el mapeo de tus puntos de entrada mediante el sistema de archivos de tu directorio. Cada archivo renderizado en <code class="text-cyber-orange bg-space-dark px-1.5 py-0.5 rounded">src/pages/</code> se convierte en un endpoint HTML estático optimizado.</p>
+                            
+                            <div class="bg-space-dark p-4 rounded-xl border border-gray-900 text-xs text-gray-400 space-y-1 mt-4">
+                                <div class="text-gray-500 font-bold">// Estructura del Árbol de Páginas</div>
+                                <div>📦 src/pages/</div>
+                                <div> ├── 📄 index.jhk <span class="text-cyan-600">-----------&gt; tu-dominio.com/</span></div>
+                                <div> ├── 📄 sobre-nosotros.jhk <span class="text-cyan-600">----&gt; tu-dominio.com/sobre-nosotros</span></div>
+                                <div> └── 📁 api/</div>
+                                <div> &nbsp;&nbsp;&nbsp;&nbsp;└── 📄 check-vulnerability.js</div>
+                            </div>
+                        </div>
+
+                        <!-- Islas Dinámicas -->
+                        <div id="tab-islands" class="tab-content hidden space-y-4">
+                            <h3 class="text-2xl font-bold text-white tracking-tight">Hidratación Parcial de Componentes</h3>
+                            <p class="text-gray-400 text-sm leading-relaxed">Por defecto, JohawebK no envía código JavaScript al lado del cliente, garantizando una carga inmediata. Para aquellas zonas interactivas que exijan reactividad (ej. menús desplegables o formularios con hooks de React), se utiliza la directiva explícita de aislamiento.</p>
+                            
+                            <div class="bg-space-dark p-4 rounded-xl border border-gray-900 text-xs text-gray-400 mt-4">
+                                <div class="text-gray-500 font-bold mb-2">// El botón será interactivo en el navegador, el resto permanece estático</div>
+                                <span class="text-purple-400">&lt;</span><span class="text-blue-400">BotonContador</span> <span class="text-cyber-blue font-bold">client:load</span> <span class="text-purple-400">/&gt;</span>
+                            </div>
+                        </div>
+
+                        <!-- Reglas Blue Team -->
+                        <div id="tab-security" class="tab-content hidden space-y-4">
+                            <h3 class="text-2xl font-bold text-white tracking-tight">Configuración de Políticas Blue Team</h3>
+                            <p class="text-gray-400 text-sm leading-relaxed">Protege tu código en tiempo de compilación. A través de las políticas de seguridad integradas en el núcleo del framework, puedes definir reglas estrictas de análisis estático (SAST) y detener compilaciones si se infringen parámetros de seguridad.</p>
+                            
+                            <div class="bg-space-dark p-4 rounded-xl border border-gray-900 text-xs text-gray-400 mt-4">
+                                <div class="text-cyber-blue font-bold mb-1">johawebk.config.json</div>
+                                {<br>
+                                &nbsp;&nbsp;<span class="text-cyber-orange">"security"</span>: {<br>
+                                &nbsp;&nbsp;&nbsp;&nbsp;"auditOnBuild": <span class="text-purple-400">true</span>,<br>
+                                &nbsp;&nbsp;&nbsp;&nbsp;"failOnSeverity": <span class="text-red-500 font-bold">"ALTA"</span><br>
+                                &nbsp;&nbsp;}<br>
+                                }
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Indicador inferior estético -->
+                    <div class="mt-8 pt-4 border-t border-gray-900 flex justify-between text-xs text-gray-600">
+                        <span>Documentación de JohawebK v1.0</span>
+                        <span class="text-cyber-blue">Núcleo seguro verificado 🛡️</span>
+                    </div>
+                </main>
+            </div>
+        </div>
+    </section>
+
+    <!-- Simulador Panel Blue Team -->
+    <section id="blue-team" class="container mx-auto px-6 py-16 border-t border-gray-900">
+        <div class="max-w-4xl mx-auto">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold mb-4 text-cyber-orange">Panel Blue Team Integrado</h2>
+                <p class="text-gray-400">Monitorea amenazas y debilidades del proyecto desde la interfaz de desarrollo.</p>
+                <div class="flex justify-center gap-3 mt-6 text-xs">
+                    <button onclick="filterAlerts('TODAS')" class="px-3 py-1.5 rounded bg-gray-800 hover:bg-gray-700 transition font-bold tracking-wider">TODAS</button>
+                    <button onclick="filterAlerts('ALTA')" class="px-3 py-1.5 rounded bg-red-950 border border-red-500 text-red-400 hover:bg-red-900 transition font-bold tracking-wider">ALTAS</button>
+                    <button onclick="filterAlerts('MEDIA')" class="px-3 py-1.5 rounded bg-yellow-950 border border-yellow-500 text-yellow-400 hover:bg-yellow-900 transition font-bold tracking-wider">MEDIAS</button>
+                    <button onclick="filterAlerts('BAJA')" class="px-3 py-1.5 rounded bg-blue-950 border border-cyber-blue text-cyber-blue hover:bg-blue-900 transition font-bold tracking-wider">BAJAS</button>
+                </div>
+            </div>
+
+            <!-- Estructura de Terminal -->
+            <div class="bg-panel-dark border border-cyber-blue/30 rounded-xl shadow-2xl p-4 md:p-6">
+                <div class="flex justify-between items-center pb-4 border-b border-gray-800 mb-6">
+                    <div class="flex gap-2">
+                        <span class="w-3 h-3 rounded-full bg-red-500"></span>
+                        <span class="w-3 h-3 rounded-full bg-yellow-500"></span>
+                        <span class="w-3 h-3 rounded-full bg-green-500"></span>
+                    </div>
+                    <span class="text-xs text-cyber-blue font-bold tracking-widest">JHK-SHIELD-MONITOR v1.0.4</span>
+                </div>
+
+                <div id="alerts-container" class="space-y-4">
+                    <div class="alert-item p-4 bg-card-dark border-l-4 border-red-500 rounded-r-md hover:bg-slate-800/50 transition-all" data-level="ALTA">
+                        <div class="flex items-center gap-2 font-bold text-sm text-red-400 mb-1">
+                            <span>🔴</span> [ALERTA ALTA] CVE-2026-X: Inyección de Script en Componente Dinámico
+                        </div>
+                        <p class="text-xs text-gray-400 ml-6">Vulnerabilidad crítica detectada en el renderizado del lado del cliente. Elementos no sanitizados pueden permitir la ejecución remota de scripts (XSS).</p>
+                    </div>
+
+                    <div class="alert-item p-4 bg-card-dark border-l-4 border-yellow-500 rounded-r-md hover:bg-slate-800/50 transition-all" data-level="MEDIA">
+                        <div class="flex items-center gap-2 font-bold text-sm text-yellow-400 mb-1">
+                            <span>🟡</span> [ALERTA MEDIA] Misconfiguration: Configuración CORS Excesiva
+                        </div>
+                        <p class="text-xs text-gray-400 ml-6">El archivo de configuración de cabeceras de red permite orígenes cruzados indiscriminados (`*`). Se aconseja limitar a dominios de confianza.</p>
+                    </div>
+
+                    <div class="alert-item p-4 bg-card-dark border-l-4 border-cyber-blue rounded-r-md hover:bg-slate-800/50 transition-all" data-level="BAJA">
+                        <div class="flex items-center gap-2 font-bold text-sm text-cyber-blue mb-1">
+                            <span>🔵</span> [ALERTA BAJA] Deprecated Code: Uso de API Heredada
+                        </div>
+                        <p class="text-xs text-gray-400 ml-6">El endpoint `/api/v1/health` utiliza un método de obtención asíncrono obsoleto de la versión beta. Actualizar a la nueva sintaxis nativa de JohawebK.</p>
+                    </div>
+                </div>
+
+                <div class="mt-6 pt-4 border-t border-gray-800 flex flex-col sm:flex-row justify-between items-center text-xs text-gray-500 gap-2">
+                    <div>Estatus: <strong class="text-green-400">PROCESANDO AMBIENTE LOCAL (0 Bloqueos)</strong></div>
+                    <div class="flex gap-4">
+                        <span>Lighthouse: <strong class="text-green-400">100/100 ⚡</strong></span>
+                        <span>Auditoría: <strong class="text-green-400">PASADA ✔️</strong></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="p-8 border-t border-gray-900 text-center text-xs text-gray-600">
+        <p>© 2026 JohawebK Framework. Potenciado para construir con elegancia, fortificado para resistir ataques.</p>
+    </footer>
+
+ 
+    <script>
+       
+        function setActiveStep(stepNumber) {
+            const terminalTitle = document.getElementById('terminal-title');
+            const terminalBody = document.getElementById('terminal-body');
+            
+           
+            for (let i = 1; i <= 3; i++) {
+                const dot = document.getElementById(`dot-${i}`);
+                const title = document.getElementById(`title-step-${i}`);
+                dot.className = "absolute left-3 top-1 -translate-x-1/2 w-6 h-6 rounded-full bg-space-dark border-4 border-gray-700 transition-all z-10";
+                title.className = "text-lg font-bold text-gray-500 mb-2 transition-colors duration-300";
+            }
+
+         
+            const activeDot = document.getElementById(`dot-${stepNumber}`);
+            const activeTitle = document.getElementById(`title-step-${stepNumber}`);
+            
+            if (stepNumber === 1) {
+                activeDot.className = "absolute left-3 top-1 -translate-x-1/2 w-6 h-6 rounded-full bg-space-dark border-4 border-cyber-blue shadow-[0_0_10px_rgba(0,240,255,0.5)] transition-all z-10";
+                activeTitle.className = "text-lg font-bold text-cyber-blue mb-2 transition-colors duration-300";
+                terminalTitle.innerText = "bash - johawebk-cli";
+                terminalBody.innerHTML = `
+                    <div class="text-cyan-400">
+                        <span class="text-gray-600">~</span> npm create johawebk@latest my-secure-app<br>
+                        <span class="text-gray-500">▶ Configurando espacio de trabajo estructurado...</span><br>
+                        <span class="text-gray-500">▶ Inyectando políticas del módulo de ciberseguridad...</span><br><br>
+                        <span class="text-green-400 font-bold">✓ Entorno listo. Directorio /my-secure-app inicializado correctamente.</span>
+                    </div>`;
+            } else if (stepNumber === 2) {
+                activeDot.className = "absolute left-3 top-1 -translate-x-1/2 w-6 h-6 rounded-full bg-space-dark border-4 border-cyber-orange shadow-[0_0_10px_rgba(255,107,0,0.5)] transition-all z-10";
+                activeTitle.className = "text-lg font-bold text-cyber-orange mb-2 transition-colors duration-300";
+                terminalTitle.innerText = "editor - src/pages/index.jhk";
+                terminalBody.innerHTML = `
+                    <div class="text-gray-400">
+                        <span class="text-purple-400">import</span> { useState } <span class="text-purple-400">from</span> <span class="text-green-400">'johawebk/client'</span>;<br><br>
+                        <span class="text-purple-400">export default function</span> <span class="text-blue-400">Home</span>() {<br>
+                        &nbsp;&nbsp;<span class="text-purple-400">return</span> (<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&lt;<span class="text-green-400">main</span> className=<span class="text-green-400">"p-8 text-center"</span>&gt;<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;<span class="text-green-400">h1</span>&gt;Proyecto Seguro de JohawebK&lt;/<span class="text-green-400">h1</span>&gt;<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&lt;/<span class="text-green-400">main</span>&gt;<br>
+                        &nbsp;&nbsp;);<br>
+                        }
+                    </div>`;
+            } else if (stepNumber === 3) {
+                activeDot.className = "absolute left-3 top-1 -translate-x-1/2 w-6 h-6 rounded-full bg-space-dark border-4 border-green-500 shadow-[0_0_10px_rgba(34,197,94,0.5)] transition-all z-10";
+                activeTitle.className = "text-lg font-bold text-green-400 mb-2 transition-colors duration-300";
+                terminalTitle.innerText = "bash - npm run dev";
+                terminalBody.innerHTML = `
+                    <div class="text-green-400">
+                        <span class="text-gray-600">~</span> cd my-secure-app && npm run dev<br>
+                        <span class="text-white">🚀 JohawebK Engine v1.0.0 local server started</span><br>
+                        <span class="text-gray-500">↳ Local: http://localhost:4321/</span><br><br>
+                        <span class="text-yellow-400 font-bold">[🛡️ BLUE TEAM AUDIT] Escaneo pasivo iniciado...</span><br>
+                        <span class="text-green-400">✓ 0 vulnerabilidades bloqueantes encontradas. Todo despejado.</span>
+                    </div>`;
+            }
+        }
+
+    
+        function switchTab(tabId) {
+            document.querySelectorAll('.tab-content').forEach(content => {
+                content.classList.add('hidden');
+            });
+            document.querySelectorAll('.tab-btn').forEach(btn => {
+                btn.classList.remove('text-cyber-blue', 'border-l-4', 'border-cyber-blue', 'bg-card-dark');
+                btn.classList.add('text-gray-400');
+            });
+
+            document.getElementById(tabId).classList.remove('hidden');
+            
+            const activeBtn = document.getElementById('btn-' + tabId);
+            activeBtn.className = "tab-btn w-full text-left px-4 py-3 rounded-lg bg-card-dark text-cyber-blue border-l-4 border-cyber-blue whitespace-nowrap transition-all duration-200";
+        }
+
+    
+        function filterAlerts(level) {
+            const items = document.querySelectorAll('.alert-item');
+            items.forEach(item => {
+                if (level === 'TODAS' || item.getAttribute('data-level') === level) {
+                    item.style.display = 'block';
+                } else {
+                    item.style.display = 'none';
+                }
+            });
+        }
+
+   
+        function copiarComando(id) {
+            const el = document.getElementById(id);
+            navigator.clipboard.writeText(el.innerText).then(() => {
+                const prevText = el.innerText;
+                el.innerText = "¡Copiado al portapapeles! 🚀";
+                el.style.color = "#00f0ff";
+                setTimeout(() => {
+                    el.innerText = prevText;
+                    el.style.color = "";
+                }, 1500);
+            });
+        }
+    </script>
+</body>
+</html>
